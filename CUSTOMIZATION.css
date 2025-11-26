@@ -1,0 +1,213 @@
+/* ==================================================
+   QUICK CUSTOMIZATION GUIDE
+   ==================================================
+   
+   This file contains the most common customizations
+   you might want to make to your website.
+================================================== */
+
+/* ============================================
+   1. CHANGE YOUR SERVER IP
+   ============================================
+   File: script.js (Line 84)
+   
+   Find:
+   const serverIP = 'play.starfall.net';
+   
+   Replace with:
+   const serverIP = 'your-server-ip.com';
+*/
+
+/* ============================================
+   2. CHANGE THEME COLORS
+   ============================================
+   File: styles.css (Lines 4-35)
+   
+   Primary Color (Main accent):
+   --primary-color: #00d4ff;
+   
+   Secondary Color:
+   --secondary-color: #7b2cbf;
+   
+   Accent Color:
+   --accent-color: #ff006e;
+   
+   Success Color (prices):
+   --success-color: #06ffa5;
+*/
+
+/* ============================================
+   3. UPDATE DISCORD LINKS
+   ============================================
+   File: index.html
+   
+   Search for: https://discord.gg/XpXS7DxP92
+   Replace with your Discord invite link
+   
+   Also update the admin username:
+   Line 496: @starfall_admin
+*/
+
+/* ============================================
+   4. CUSTOMIZE STORE ITEMS
+   ============================================
+   File: index.html (Store Section)
+   
+   To add a new item, copy this structure:
+   
+   <div class="store-item" data-type="rank">
+       <div class="item-badge">Popular</div>
+       <div class="item-icon">
+           <i class="fas fa-star"></i>
+       </div>
+       <h4 class="item-name">Item Name</h4>
+       <p class="item-description">Description here</p>
+       <div class="item-price">$9.99</div>
+       <button class="btn-purchase" data-item="Item Name">
+           <i class="fas fa-shopping-cart"></i> Purchase
+       </button>
+   </div>
+*/
+
+/* ============================================
+   5. UPDATE SERVER STATS
+   ============================================
+   File: index.html (Lines 65-87)
+   
+   Change the numbers:
+   - Active Players: <span class="stat-value">1000+</span>
+   - Uptime: <span class="stat-value">24/7</span>
+   - Protection: <span class="stat-value">100%</span>
+*/
+
+/* ============================================
+   6. MODIFY RULES
+   ============================================
+   File: index.html (Rules Section starting line 330)
+   
+   Add/remove list items in each category:
+   <li><i class="fas fa-check"></i> Your rule here</li>
+*/
+
+/* ============================================
+   7. CHANGE FONTS
+   ============================================
+   File: index.html (Head section)
+   
+   Current fonts: Poppins, Orbitron
+   
+   To use different fonts:
+   1. Go to https://fonts.google.com
+   2. Select your fonts
+   3. Replace the Google Fonts link in <head>
+   4. Update font-family in styles.css
+*/
+
+/* ============================================
+   8. ADD SOCIAL MEDIA LINKS
+   ============================================
+   File: index.html (Footer section, line 476)
+   
+   Replace # with your actual links:
+   <a href="#" aria-label="Twitter">
+   <a href="#" aria-label="YouTube">
+*/
+
+/* ============================================
+   9. ENABLE PARTICLE EFFECTS (OPTIONAL)
+   ============================================
+   File: script.js (Bottom of file)
+   
+   Uncomment the line:
+   // createParticles();
+   
+   Remove the // to enable floating particles
+*/
+
+/* ============================================
+   10. CUSTOMIZE PAGE TITLE & META
+   ============================================
+   File: index.html (Head section)
+   
+   <title>Starfall - Minecraft Survival Server</title>
+   
+   Add SEO meta tags:
+   <meta name="description" content="Your description">
+   <meta name="keywords" content="minecraft, server, survival">
+*/
+
+/* ==================================================
+   TESTING CHECKLIST
+   ==================================================
+   
+   ✓ Open index.html in browser
+   ✓ Test dark/light mode toggle
+   ✓ Test hamburger menu on mobile (resize browser)
+   ✓ Click "Copy Server IP" button
+   ✓ Click store purchase buttons to test modal
+   ✓ Test smooth scrolling navigation links
+   ✓ Test scroll-to-top button (scroll down first)
+   ✓ Check all Discord links work
+   ✓ Verify logo displays correctly
+   ✓ Test on mobile device or mobile view
+   
+================================================== */
+
+/* ==================================================
+   COMMON ICON CLASSES (Font Awesome)
+   ==================================================
+   
+   Use these in your HTML for different icons:
+   
+   <i class="fas fa-star"></i>        - Star
+   <i class="fas fa-crown"></i>       - Crown
+   <i class="fas fa-gem"></i>         - Gem
+   <i class="fas fa-trophy"></i>      - Trophy
+   <i class="fas fa-fire"></i>        - Fire
+   <i class="fas fa-bolt"></i>        - Lightning
+   <i class="fas fa-heart"></i>       - Heart
+   <i class="fas fa-skull"></i>       - Skull
+   <i class="fas fa-magic"></i>       - Magic wand
+   <i class="fas fa-dragon"></i>      - Dragon
+   <i class="fas fa-shield-alt"></i>  - Shield
+   <i class="fas fa-sword"></i>       - Sword
+   <i class="fas fa-key"></i>         - Key
+   <i class="fas fa-gift"></i>        - Gift
+   <i class="fas fa-box"></i>         - Box
+   
+   Find more at: https://fontawesome.com/icons
+   
+================================================== */
+
+/* ==================================================
+   COLOR SCHEME PRESETS
+   ==================================================
+   
+   Copy and paste these into :root in styles.css
+   
+   --- MINECRAFT CLASSIC ---
+   --primary-color: #55FF55;
+   --secondary-color: #5555FF;
+   --accent-color: #FFAA00;
+   
+   --- NETHER THEME ---
+   --primary-color: #FF4444;
+   --secondary-color: #8B0000;
+   --accent-color: #FFD700;
+   
+   --- END THEME ---
+   --primary-color: #9B59B6;
+   --secondary-color: #2C3E50;
+   --accent-color: #E74C3C;
+   
+   --- AQUA THEME ---
+   --primary-color: #00D4FF;
+   --secondary-color: #0099CC;
+   --accent-color: #00FFAA;
+   
+   --- FOREST THEME ---
+   --primary-color: #4CAF50;
+   --secondary-color: #388E3C;
+   --accent-color: #8BC34A;
+   
+================================================== */

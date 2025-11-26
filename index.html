@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starfall - Minecraft Survival Server</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logo.jpg" alt="Starfall Logo" class="logo-img">
+                <span class="logo-text">Starfall</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#store" class="nav-link">Store</a></li>
+                <li><a href="#rules" class="nav-link">Rules</a></li>
+            </ul>
+            <div class="nav-controls">
+                <a href="https://discord.gg/XpXS7DxP92" target="_blank" class="discord-btn">
+                    <i class="fab fa-discord"></i> Join Discord
+                </a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-logo">
+                <img src="logo.jpg" alt="Starfall Logo">
+            </div>
+            <h1 class="hero-title">Welcome to <span class="highlight">Starfall</span></h1>
+            <p class="hero-subtitle">An Epic Minecraft Survival Experience</p>
+            <p class="hero-description">Join our growing community in the ultimate survival adventure. Build, explore, and conquer!</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" id="copyIP">
+                    <i class="fas fa-copy"></i> Copy Server IP
+                </button>
+                <a href="#store" class="btn btn-secondary">
+                    <i class="fas fa-shopping-cart"></i> Visit Store
+                </a>
+            </div>
+            <div class="server-stats">
+                <!-- <div class="stat">
+                    <i class="fas fa-users"></i>
+                    <div class="stat-info">
+                        <span class="stat-value">1000+</span>
+                        <span class="stat-label">Active Players</span>
+                    </div>
+                </div> -->
+                <div class="stat">
+                    <i class="fas fa-clock"></i>
+                    <div class="stat-info">
+                        <span class="stat-value">24/7</span>
+                        <span class="stat-label">Uptime</span>
+                    </div>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-shield-alt"></i>
+                    <div class="stat-info">
+                        <span class="stat-value">100%</span>
+                        <span class="stat-label">Protected</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Store Section -->
+    <section id="store" class="store">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-store"></i> Server Store
+            </h2>
+            <p class="section-subtitle">Support the server and get awesome perks!</p>
+
+            <!-- Ranks -->
+            <div class="store-category">
+                <h3 class="category-title">
+                    <i class="fas fa-crown"></i> Ranks
+                </h3>
+                <div class="store-grid">
+                    <div class="store-item" data-type="rank">
+                        <div class="item-badge">Popular</div>
+                        <div class="item-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4 class="item-name">VIP Rank</h4>
+                        <p class="item-description">Access to exclusive commands, custom chat colors, and 2 extra homes!</p>
+                        <div class="item-price">₹399</div>
+                        <button class="btn-purchase" data-item="VIP Rank">
+                            <i class="fas fa-shopping-cart"></i> Purchase
+                        </button>
+                    </div>
+                    <div class="store-item" data-type="rank">
+                        <div class="item-badge premium">Premium</div>
+                        <div class="item-icon">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <h4 class="item-name">VIP+ Rank</h4>
+                        <p class="item-description">All VIP perks plus /fly, /feed, custom particle effects, and 5 homes!</p>
+                        <div class="item-price">₹799</div>
+                        <button class="btn-purchase" data-item="VIP+ Rank">
+                            <i class="fas fa-shopping-cart"></i> Purchase
+                        </button>
+                    </div>
+                    <div class="store-item" data-type="rank">
+                        <div class="item-badge legendary">Legendary</div>
+                        <div class="item-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h4 class="item-name">MVP Rank</h4>
+                        <p class="item-description">Ultimate perks! All previous + /heal, /repair, priority queue, 10 homes!</p>
+                        <div class="item-price">₹1,599</div>
+                        <button class="btn-purchase" data-item="MVP Rank">
+                            <i class="fas fa-shopping-cart"></i> Purchase
+                        </button>
+                    </div>
+                    <div class="store-item" data-type="rank">
+                        <div class="item-badge legendary">Elite</div>
+                        <div class="item-icon">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <h4 class="item-name">Elite Rank</h4>
+                        <p class="item-description">God-tier perks! All MVP perks + exclusive cosmetics, unlimited homes!</p>
+                        <div class="item-price">₹2,799</div>
+                        <button class="btn-purchase" data-item="Elite Rank">
+                            <i class="fas fa-shopping-cart"></i> Purchase
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Crate Keys -->
+            <div class="store-category">
+                <h3 class="category-title">
+                    <i class="fas fa-key"></i> Crate Keys
+                </h3>
+                <div class="store-grid">
+                    <div class="store-item" data-type="key">
+                        <div class="item-icon">
+                            <i class="fas fa-box"></i>
+                        </div>
+                        <h4 class="item-name">Common Key</h4>
+                        <p class="item-description">Unlock common crates for basic items, blocks, and resources!</p>
+                        <div class="item-price">₹159</div>
+                        <button class="btn-purchase" data-item="Common Key">
+                            <i class="fas fa-shopping-cart"></i> Purchase
+                        </button>
+                    </div>
+                    <div class="store-item" data-type="key">
+                        <div class="item-icon">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <h4 class="item-name">Rare Key</h4>
+                        <p class="item-description">Unlock rare crates with enchanted gear, spawners, and special items!</p>
+                        <div class="item-price">₹319</div>
+                        <button class="btn-purchase" data-item="Rare Key">
+                            <i class="fas fa-shopping-cart"></i> Purchase
+                        </button>
+                    </div>
+                    <div class="store-item" data-type="key">
+                        <div class="item-badge premium">Hot</div>
+                        <div class="item-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h4 class="item-name">Epic Key</h4>
+                        <p class="item-description">Open epic crates for powerful enchants, rare blocks, and exclusive cosmetics!</p>
+                        <div class="item-price">₹639</div>
+                        <button class="btn-purchase" data-item="Epic Key">
+                            <i class="fas fa-shopping-cart"></i> Purchase
+                        </button>
+                    </div>
+                    <div class="store-item" data-type="key">
+                        <div class="item-badge legendary">Best</div>
+                        <div class="item-icon">
+                            <i class="fas fa-treasure-chest"></i>
+                        </div>
+                        <h4 class="item-name">Legendary Key</h4>
+                        <p class="item-description">The ultimate crate with the rarest items, custom gear, and amazing rewards!</p>
+                        <div class="item-price">₹1,199</div>
+                        <button class="btn-purchase" data-item="Legendary Key">
+                            <i class="fas fa-shopping-cart"></i> Purchase
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tags -->
+            <div class="store-category">
+                <h3 class="category-title">
+                    <i class="fas fa-tag"></i> Tags
+                </h3>
+                <div class="store-grid">
+                    <div class="store-item" data-type="tag">
+                        <div class="item-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h4 class="item-name">Lightning Tag</h4>
+                        <p class="item-description">Show off your speed with a striking lightning tag in chat!</p>
+                        <div class="item-price">₹199</div>
+                        <button class="btn-purchase" data-item="Lightning Tag">
+                            <i class="fas fa-shopping-cart"></i> Purchase
+                        </button>
+                    </div>
+                    <div class="store-item" data-type="tag">
+                        <div class="item-icon">
+                            <i class="fas fa-dragon"></i>
+                        </div>
+                        <h4 class="item-name">Dragon Tag</h4>
+                        <p class="item-description">Display your might with an epic dragon tag!</p>
+                        <div class="item-price">₹199</div>
+                        <button class="btn-purchase" data-item="Dragon Tag">
+                            <i class="fas fa-shopping-cart"></i> Purchase
+                        </button>
+                    </div>
+                    <div class="store-item" data-type="tag">
+                        <div class="item-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4 class="item-name">Love Tag</h4>
+                        <p class="item-description">Spread positivity with a lovely heart tag!</p>
+                        <div class="item-price">₹199</div>
+                        <button class="btn-purchase" data-item="Love Tag">
+                            <i class="fas fa-shopping-cart"></i> Purchase
+                        </button>
+                    </div>
+                    <div class="store-item" data-type="tag">
+                        <div class="item-icon">
+                            <i class="fas fa-skull"></i>
+                        </div>
+                        <h4 class="item-name">Warrior Tag</h4>
+                        <p class="item-description">Show your battle prowess with a warrior skull tag!</p>
+                        <div class="item-price">₹199</div>
+                        <button class="btn-purchase" data-item="Warrior Tag">
+                            <i class="fas fa-shopping-cart"></i> Purchase
+                        </button>
+                    </div>
+                    <div class="store-item" data-type="tag">
+                        <div class="item-icon">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <h4 class="item-name">Mystic Tag</h4>
+                        <p class="item-description">Enchant your name with a magical mystic tag!</p>
+                        <div class="item-price">₹199</div>
+                        <button class="btn-purchase" data-item="Mystic Tag">
+                            <i class="fas fa-shopping-cart"></i> Purchase
+                        </button>
+                    </div>
+                    <div class="store-item" data-type="tag">
+                        <div class="item-icon">
+                            <i class="fas fa-snowflake"></i>
+                        </div>
+                        <h4 class="item-name">Frost Tag</h4>
+                        <p class="item-description">Cool down the chat with an icy frost tag!</p>
+                        <div class="item-price">₹199</div>
+                        <button class="btn-purchase" data-item="Frost Tag">
+                            <i class="fas fa-shopping-cart"></i> Purchase
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rules Section -->
+    <section id="rules" class="rules">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-gavel"></i> Server Rules
+            </h2>
+            <p class="section-subtitle">Please read and follow all rules to ensure a great experience for everyone</p>
+
+            <div class="rules-grid">
+                <!-- Server Rules -->
+                <div class="rules-card">
+                    <div class="rules-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3 class="rules-card-title">Playing on the Server</h3>
+                    <ul class="rules-list">
+                        <li><i class="fas fa-check"></i> No hacking, cheating, or using unfair client modifications</li>
+                        <li><i class="fas fa-check"></i> No exploiting bugs or glitches for personal gain</li>
+                        <li><i class="fas fa-check"></i> No item duplication or use of duplication glitches</li>
+                        <li><i class="fas fa-check"></i> Respect other players' claims and property</li>
+                        <li><i class="fas fa-check"></i> Report any bugs or exploits to staff immediately</li>
+                        <li><i class="fas fa-check"></i> Follow all instructions given by staff members</li>
+                        <li><i class="fas fa-check"></i> Have fun and be respectful to all players!</li>
+                    </ul>
+                </div>
+
+                <!-- Chat Rules -->
+                <div class="rules-card">
+                    <div class="rules-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3 class="rules-card-title">In-Game Chat Rules</h3>
+                    <ul class="rules-list">
+                        <li><i class="fas fa-check"></i> No spam, flooding, or excessive caps</li>
+                        <li><i class="fas fa-check"></i> No hate speech, racism, or discrimination</li>
+                        <li><i class="fas fa-check"></i> No harassment, bullying, or toxic behavior</li>
+                        <li><i class="fas fa-check"></i> Keep language respectful and family-friendly</li>
+                        <li><i class="fas fa-check"></i> No begging for items, ranks, or special treatment</li>
+                        <li><i class="fas fa-check"></i> No impersonating staff members or other players</li>
+                        <li><i class="fas fa-check"></i> Keep discussions appropriate and respectful</li>
+                    </ul>
+                </div>
+
+                <!-- Discord Rules -->
+                <div class="rules-card">
+                    <div class="rules-icon">
+                        <i class="fab fa-discord"></i>
+                    </div>
+                    <h3 class="rules-card-title">Discord Server Rules</h3>
+                    <ul class="rules-list">
+                        <li><i class="fas fa-check"></i> Follow Discord's Terms of Service and Community Guidelines</li>
+                        <li><i class="fas fa-check"></i> No NSFW content or inappropriate material</li>
+                        <li><i class="fas fa-check"></i> No spam pinging users or staff members</li>
+                        <li><i class="fas fa-check"></i> Respect all staff members and their decisions</li>
+                        <li><i class="fas fa-check"></i> Use channels for their intended purposes</li>
+                        <li><i class="fas fa-check"></i> No excessive self-promotion or advertising</li>
+                        <li><i class="fas fa-check"></i> Keep voice channels civil and respectful</li>
+                        <li><i class="fas fa-check"></i> No mic spamming or soundboard abuse</li>
+                        <li><i class="fas fa-check"></i> Report issues to staff using proper channels</li>
+                        <li><i class="fas fa-check"></i> Be welcoming to new members of the community</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="rules-footer">
+                <p><i class="fas fa-exclamation-triangle"></i> Breaking these rules may result in warnings, kicks, temporary bans, or permanent bans depending on severity.</p>
+                <p>If you have questions about the rules, please contact a staff member.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="logo.jpg" alt="Starfall Logo" class="footer-logo">
+                    <h3>Starfall</h3>
+                    <p>The ultimate Minecraft survival experience. Join our community today!</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#store">Store</a></li>
+                        <li><a href="#rules">Rules</a></li>
+                        <li><a href="https://discord.gg/XpXS7DxP92" target="_blank">Discord</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="https://discord.gg/XpXS7DxP92" target="_blank" aria-label="Discord">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Purchase Modal -->
+    <div class="modal" id="purchaseModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-icon">
+                <i class="fab fa-discord"></i>
+            </div>
+            <h3 class="modal-title">Complete Your Purchase</h3>
+            <p class="modal-text">To complete this purchase, please contact any admin on Discord:</p>
+            <div class="modal-discord">
+                <i class="fab fa-discord"></i>
+                <div style="display: flex; flex-direction: column; gap: 5px;">
+                    <span class="discord-username">@diptatanu</span>
+                    <span class="discord-username">@skullcrush0784</span>
+                    <span class="discord-username">@harsh_292008</span>
+                </div>
+            </div>
+            <p class="modal-subtext">Let them know which item you'd like to purchase: <strong id="modalItem"></strong></p>
+            <a href="https://discord.gg/XpXS7DxP92" target="_blank" class="btn btn-primary modal-btn">
+                <i class="fab fa-discord"></i> Open Discord
+            </a>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
