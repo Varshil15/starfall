@@ -1084,7 +1084,7 @@ button {
         font-size: 0.9rem;
     }
     
-    .discord-btn span {
+    .discord-btn .discord-text {
         display: none;
     }
     
