@@ -72,7 +72,7 @@ html {
     scroll-behavior: smooth;
     overflow-x: hidden;
     font-size: 90%;
-    zoom: 0.95;
+    zoom: 0.97;
 }
 
 @media (max-width: 768px) {
