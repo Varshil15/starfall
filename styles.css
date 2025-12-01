@@ -67,6 +67,7 @@
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    font-size: 90%;
 }
 
 body {
@@ -281,7 +282,7 @@ button {
     align-items: center;
     justify-content: center;
     position: relative;
-    padding-top: var(--nav-height);
+    padding: calc(var(--nav-height) + 40px) 20px 40px;
     overflow: hidden;
 }
 
@@ -391,7 +392,7 @@ button {
     display: flex;
     gap: 20px;
     justify-content: center;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
 }
 
 .btn {
