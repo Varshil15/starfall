@@ -108,11 +108,11 @@ let isAnimating = false;
 copyIPButton.addEventListener('mouseenter', () => {
     if (btnText && !copyIPButton.classList.contains('copied') && !isAnimating) {
         isAnimating = true;
-        btnText.style.animation = 'textSwap 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+        btnText.style.animation = 'textSwap 0.25s ease';
         setTimeout(() => {
             btnText.textContent = serverIP;
             isAnimating = false;
-        }, 300);
+        }, 125);
     }
 });
 
@@ -120,12 +120,12 @@ copyIPButton.addEventListener('mouseenter', () => {
 copyIPButton.addEventListener('mouseleave', () => {
     if (btnText && !copyIPButton.classList.contains('copied') && !isAnimating) {
         isAnimating = true;
-        btnText.style.animation = 'textSwapReverse 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+        btnText.style.animation = 'textSwapReverse 0.25s ease';
         setTimeout(() => {
             btnText.textContent = 'Copy Server IP';
             btnText.style.animation = '';
             isAnimating = false;
-        }, 300);
+        }, 125);
     }
 });
 
