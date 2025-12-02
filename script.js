@@ -101,6 +101,33 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // ========================================
 const copyIPButton = document.getElementById('copyIP');
 const serverIP = 'play.starfallsmp.online'; // Change this to your actual server IP
+const btnText = copyIPButton.querySelector('.btn-text');
+let isAnimating = false;
+
+// Show IP on hover
+copyIPButton.addEventListener('mouseenter', () => {
+    if (btnText && !copyIPButton.classList.contains('copied') && !isAnimating) {
+        isAnimating = true;
+        btnText.style.animation = 'textSwap 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+        setTimeout(() => {
+            btnText.textContent = serverIP;
+            isAnimating = false;
+        }, 300);
+    }
+});
+
+// Show "Copy Server IP" when not hovering
+copyIPButton.addEventListener('mouseleave', () => {
+    if (btnText && !copyIPButton.classList.contains('copied') && !isAnimating) {
+        isAnimating = true;
+        btnText.style.animation = 'textSwapReverse 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+        setTimeout(() => {
+            btnText.textContent = 'Copy Server IP';
+            btnText.style.animation = '';
+            isAnimating = false;
+        }, 300);
+    }
+});
 
 copyIPButton.addEventListener('click', async () => {
     try {
@@ -108,12 +135,15 @@ copyIPButton.addEventListener('click', async () => {
         
         // Visual feedback
         const originalHTML = copyIPButton.innerHTML;
-        copyIPButton.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        copyIPButton.classList.add('copied');
+        copyIPButton.innerHTML = '<i class="fas fa-check"></i> <span class="btn-text">Copied!</span>';
         copyIPButton.style.background = 'linear-gradient(135deg, #06ffa5, #00d4ff)';
         
         setTimeout(() => {
             copyIPButton.innerHTML = originalHTML;
             copyIPButton.style.background = '';
+            copyIPButton.classList.remove('copied');
+            isAnimating = false;
         }, 2000);
     } catch (err) {
         // Fallback for older browsers
@@ -125,10 +155,13 @@ copyIPButton.addEventListener('click', async () => {
         try {
             document.execCommand('copy');
             const originalHTML = copyIPButton.innerHTML;
-            copyIPButton.innerHTML = '<i class="fas fa-check"></i> Copied!';
+            copyIPButton.classList.add('copied');
+            copyIPButton.innerHTML = '<i class="fas fa-check"></i> <span class="btn-text">Copied!</span>';
             
             setTimeout(() => {
                 copyIPButton.innerHTML = originalHTML;
+                copyIPButton.classList.remove('copied');
+                isAnimating = false;
             }, 2000);
         } catch (err) {
             alert('Server IP: ' + serverIP);

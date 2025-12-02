@@ -443,8 +443,112 @@ button {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    transition: all var(--transition-normal);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn .btn-text {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block;
+}
+
+.btn i {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn:hover i {
+    transform: scale(1.1);
+}
+
+#copyIP {
+    min-width: 200px;
+}
+
+#copyIP .btn-text {
+    font-family: 'Orbitron', monospace;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    display: inline-block;
+}
+
+#copyIP:hover .btn-text {
+    animation: textSwap 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes textSwap {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    40% {
+        transform: translateY(-20px) scale(0.8);
+        opacity: 0;
+    }
+    60% {
+        transform: translateY(20px) scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) scale(1.05);
+        opacity: 1;
+        letter-spacing: 0.5px;
+    }
+}
+
+@keyframes textSwapReverse {
+    0% {
+        transform: translateY(0) scale(1.05);
+        opacity: 1;
+        letter-spacing: 0.5px;
+    }
+    40% {
+        transform: translateY(20px) scale(0.8);
+        opacity: 0;
+    }
+    60% {
+        transform: translateY(-20px) scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+        letter-spacing: 0px;
+    }
+}
+
+#copyIP::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+#copyIP:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+#copyIP.copied {
+    animation: pulse-success 0.6s ease;
+}
+
+@keyframes pulse-success {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 .btn-primary {
@@ -464,6 +568,25 @@ button {
 .btn-primary:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow-glow);
+}
+
+#copyIP {
+    border: 2px solid transparent;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#copyIP:hover {
+    background: var(--bg-card);
+    border-color: var(--primary-color);
+    color: var(--text-primary);
+    transform: translateY(-3px);
+}
+
+#copyIP:hover::before {
+    width: 0;
+    height: 0;
 }
 
 .btn-secondary {
