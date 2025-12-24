@@ -39,24 +39,24 @@
 }
 
 [data-theme="light"] {
-    --primary-color: #6366f1;
+    --primary-color: #3b82f6;
     --secondary-color: #8b5cf6;
     --accent-color: #ec4899;
     
-    --bg-primary: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
-    --bg-secondary: #ffffff;
-    --bg-tertiary: #f5f3ff;
-    --bg-card: rgba(255, 255, 255, 0.95);
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;
+    --bg-tertiary: #f1f5f9;
+    --bg-card: rgba(255, 255, 255, 0.98);
     
-    --text-primary: #1e293b;
-    --text-secondary: #475569;
+    --text-primary: #0f172a;
+    --text-secondary: #334155;
     --text-muted: #64748b;
     
-    --border-color: rgba(139, 92, 246, 0.25);
-    --shadow-sm: 0 2px 8px rgba(99, 102, 241, 0.08);
-    --shadow-md: 0 4px 16px rgba(99, 102, 241, 0.12);
-    --shadow-lg: 0 8px 32px rgba(99, 102, 241, 0.15);
-    --shadow-glow: 0 0 30px rgba(139, 92, 246, 0.25);
+    --border-color: rgba(226, 232, 240, 1);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.12);
+    --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.15);
 }
 
 /* ========================================
@@ -72,7 +72,7 @@ html {
     scroll-behavior: smooth;
     overflow-x: hidden;
     font-size: 90%;
-    zoom: 0.99;
+    zoom: 1;
 }
 
 @media (max-width: 768px) {
@@ -99,7 +99,7 @@ body {
 }
 
 [data-theme="light"] body {
-    background: linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 100%);
+    background: #ffffff;
 }
 
 body.menu-open {
@@ -150,9 +150,10 @@ button {
 }
 
 [data-theme="light"] .navbar {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(20px);
-    box-shadow: 0 2px 16px rgba(139, 92, 246, 0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .navbar.scrolled {
@@ -315,7 +316,7 @@ button {
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: calc(var(--nav-height) + 40px) 20px 40px;
+    padding: calc(var(--nav-height) + 10px) 20px 40px;
     overflow: hidden;
 }
 
@@ -330,13 +331,15 @@ button {
         radial-gradient(circle at 80% 50%, rgba(0, 212, 255, 0.15) 0%, transparent 50%),
         linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
     z-index: -1;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
 }
 
 [data-theme="light"] .hero-bg {
     background: 
-        radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.12) 0%, transparent 50%),
-        radial-gradient(circle at 80% 50%, rgba(99, 102, 241, 0.12) 0%, transparent 50%),
-        linear-gradient(135deg, #f0f9ff 0%, #e0e7ff 50%, #fef3ff 100%);
+        radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
+        linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
 }
 
 .hero-bg::before {
@@ -349,37 +352,40 @@ button {
     background-image: 
         repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 212, 255, 0.03) 2px, rgba(0, 212, 255, 0.03) 4px);
     animation: grid-move 20s linear infinite;
+    will-change: transform;
 }
 
 @keyframes grid-move {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(40px); }
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(0, 40px, 0); }
 }
 
 .hero-content {
     text-align: center;
     z-index: 1;
     animation: fade-in-up 1s ease;
+    will-change: transform, opacity;
+    transform: translate3d(0, 0, 0);
 }
 
 @keyframes fade-in-up {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translate3d(0, 30px, 0);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translate3d(0, 0, 0);
     }
 }
 
 .hero-logo {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 .hero-logo img {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     border-radius: 20px;
     box-shadow: var(--shadow-glow);
     animation: float 3s ease-in-out infinite;
@@ -391,7 +397,7 @@ button {
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 800;
     margin-bottom: 15px;
     font-family: 'Orbitron', sans-serif;
@@ -413,17 +419,17 @@ button {
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: var(--text-secondary);
     margin-bottom: 10px;
     font-weight: 600;
 }
 
 .hero-description {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--text-muted);
-    margin-bottom: 40px;
-    max-width: 600px;
+    margin-bottom: 35px;
+    max-width: 550px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -436,10 +442,10 @@ button {
 }
 
 .btn {
-    padding: 14px 32px;
+    padding: 12px 28px;
     border-radius: 10px;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.95rem;
     display: inline-flex;
     align-items: center;
     gap: 10px;
@@ -526,22 +532,24 @@ button {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: rgb(220, 20, 60);
     color: white;
 }
 
 [data-theme="light"] .btn-primary {
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
-    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
+    background: rgb(220, 20, 60);
+    box-shadow: 0 4px 12px rgba(220, 20, 60, 0.25);
 }
 
 [data-theme="light"] .btn-primary:hover {
-    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.3);
+    background: rgb(220, 20, 60);
+    box-shadow: 0 6px 20px rgba(220, 20, 60, 0.4);
 }
 
 .btn-primary:hover {
+    background: rgb(220, 20, 60);
     transform: translateY(-3px);
-    box-shadow: var(--shadow-glow);
+    box-shadow: 0 8px 24px rgba(220, 20, 60, 0.4);
 }
 
 #copyIP {
@@ -664,7 +672,7 @@ button {
 }
 
 [data-theme="light"] .store {
-    background: linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%);
+    background: var(--bg-secondary);
 }
 
 .section-title {
@@ -726,12 +734,14 @@ button {
 }
 
 [data-theme="light"] .store-item {
-    background: linear-gradient(135deg, #ffffff 0%, #faf5ff 100%);
-    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.08);
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--border-color);
 }
 
 [data-theme="light"] .store-item:hover {
-    box-shadow: 0 8px 24px rgba(139, 92, 246, 0.15);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border-color: var(--primary-color);
 }
 
 .store-item::before {
@@ -804,10 +814,21 @@ button {
     margin-bottom: 20px;
 }
 
+.usd-price {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-top: 5px;
+}
+
+.usd-price .old-price {
+    font-size: 0.75rem;
+}
+
 .btn-purchase {
     width: 100%;
     padding: 12px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: rgb(220, 20, 60);
     color: white;
     border-radius: 8px;
     font-weight: 600;
@@ -819,12 +840,13 @@ button {
 }
 
 [data-theme="light"] .btn-purchase {
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
-    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
+    background: rgb(220, 20, 60);
+    box-shadow: 0 4px 12px rgba(220, 20, 60, 0.25);
 }
 
 [data-theme="light"] .btn-purchase:hover {
-    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.3);
+    background: rgb(220, 20, 60);
+    box-shadow: 0 6px 20px rgba(220, 20, 60, 0.4);
 }
 
 .btn-purchase:hover {
@@ -856,12 +878,14 @@ button {
 }
 
 [data-theme="light"] .rules-card {
-    background: linear-gradient(135deg, #ffffff 0%, #faf5ff 100%);
-    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.08);
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--border-color);
 }
 
 [data-theme="light"] .rules-card:hover {
-    box-shadow: 0 8px 24px rgba(139, 92, 246, 0.15);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border-color: var(--primary-color);
 }
 
 .rules-card:hover {
@@ -1121,6 +1145,62 @@ button {
 
 .modal-btn {
     width: 100%;
+}
+
+[data-theme="light"] .modal-btn {
+    background: rgb(220, 20, 60);
+}
+
+[data-theme="light"] .modal-btn:hover {
+    background: rgb(220, 20, 60);
+    box-shadow: 0 6px 20px rgba(220, 20, 60, 0.4);
+}
+
+/* Christmas Sale Popup Styles */
+.christmas-modal {
+    background: linear-gradient(135deg, rgba(26, 31, 58, 0.98), rgba(37, 43, 72, 0.98));
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
+}
+
+[data-theme="light"] .christmas-modal {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(245, 243, 255, 0.98));
+    border: 2px solid rgba(139, 92, 246, 0.3);
+}
+
+.christmas-icon {
+    font-size: 4rem;
+    background: none;
+    width: auto;
+    height: auto;
+    animation: christmas-bounce 1s ease-in-out infinite;
+}
+
+@keyframes christmas-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.christmas-features {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.sale-item {
+    background: rgba(255, 215, 0, 0.1);
+    padding: 12px;
+    border-radius: 8px;
+    border-left: 3px solid var(--primary-color);
+    font-weight: 500;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.sale-item:hover {
+    background: rgba(255, 215, 0, 0.15);
+    transform: translateX(5px);
 }
 
 /* ========================================
@@ -1519,4 +1599,250 @@ button {
 
 ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+}
+/* ========================================
+   🎄 CHRISTMAS THEME 2025 🎄
+======================================== */
+
+/* Christmas Color Variables */
+:root {
+    --christmas-red: #c41e3a;
+    --christmas-green: #0f8a3e;
+    --christmas-gold: #ffd700;
+    --christmas-white: #ffffff;
+    --christmas-dark-green: #0a5c2e;
+    --christmas-light-red: #ff6b8a;
+}
+
+/* Christmas themed background overlay */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(196, 30, 58, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(15, 138, 62, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Snowflake Animation Container */
+.snowflakes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    color: var(--christmas-white);
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+    animation: snowfall linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes snowfall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0.3;
+    }
+}
+
+/* Christmas Sale Badge */
+.christmas-sale {
+    background: linear-gradient(135deg, var(--christmas-red), var(--christmas-light-red)) !important;
+    animation: christmas-pulse 2s ease-in-out infinite;
+    box-shadow: 0 0 20px rgba(196, 30, 58, 0.5);
+    font-size: 0.8rem !important;
+}
+
+@keyframes christmas-pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 20px rgba(196, 30, 58, 0.5);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 30px rgba(196, 30, 58, 0.8);
+    }
+}
+
+/* Old Price Styling */
+.old-price {
+    text-decoration: line-through;
+    font-size: 0.6em;
+    opacity: 0.5;
+    margin-left: 10px;
+    color: var(--text-muted);
+}
+
+/* Christmas themed store items */
+.store-item {
+    position: relative;
+    border: 2px solid rgba(196, 30, 58, 0.3) !important;
+    box-shadow: 0 0 20px rgba(15, 138, 62, 0.1);
+}
+
+
+
+.store-item:hover {
+    border-color: var(--christmas-red) !important;
+    box-shadow: 0 0 30px rgba(196, 30, 58, 0.3), 0 0 50px rgba(15, 138, 62, 0.2) !important;
+}
+
+/* Christmas lights effect on navbar */
+.navbar {
+    position: relative;
+}
+
+.navbar::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(
+        90deg,
+        var(--christmas-red) 0%,
+        var(--christmas-green) 25%,
+        var(--christmas-gold) 50%,
+        var(--christmas-red) 75%,
+        var(--christmas-green) 100%
+    );
+    background-size: 200% 100%;
+    animation: christmas-lights 3s linear infinite;
+}
+
+@keyframes christmas-lights {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+/* Christmas themed hero section */
+.hero-title {
+    text-shadow: 
+        0 0 10px rgba(196, 30, 58, 0.5),
+        0 0 20px rgba(15, 138, 62, 0.3);
+    animation: christmas-title-glow 2s ease-in-out infinite;
+}
+
+@keyframes christmas-title-glow {
+    0%, 100% {
+        text-shadow: 
+            0 0 10px rgba(196, 30, 58, 0.5),
+            0 0 20px rgba(15, 138, 62, 0.3);
+    }
+    50% {
+        text-shadow: 
+            0 0 20px rgba(196, 30, 58, 0.8),
+            0 0 40px rgba(15, 138, 62, 0.5),
+            0 0 60px rgba(255, 215, 0, 0.3);
+    }
+}
+
+/* Subtle Christmas tree decoration in hero */
+.hero::after {
+    content: '🎄';
+    position: absolute;
+    font-size: 15rem;
+    opacity: 0.02;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Christmas themed price */
+.item-price {
+    color: var(--christmas-green) !important;
+    text-shadow: 0 0 10px rgba(15, 138, 62, 0.5);
+    animation: price-shimmer 3s ease-in-out infinite;
+}
+
+@keyframes price-shimmer {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(15, 138, 62, 0.5);
+    }
+    50% {
+        text-shadow: 
+            0 0 20px rgba(15, 138, 62, 0.8),
+            0 0 30px rgba(255, 215, 0, 0.5);
+    }
+}
+
+/* Candy cane borders on cards */
+.rules-card {
+    border-image: linear-gradient(
+        135deg,
+        var(--christmas-red) 0%,
+        var(--christmas-white) 25%,
+        var(--christmas-red) 50%,
+        var(--christmas-white) 75%,
+        var(--christmas-red) 100%
+    ) 1;
+    border-width: 2px;
+}
+
+/* Festive icons color */
+.item-icon i {
+    background: linear-gradient(135deg, var(--christmas-red), var(--christmas-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+}
+
+/* Christmas footer decoration */
+.footer {
+    border-top: 3px solid var(--christmas-red) !important;
+    position: relative;
+}
+
+/* Subtle glow effect on hover */
+.store-item:hover .item-icon {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* Christmas themed section titles */
+.section-title i {
+    color: var(--christmas-red) !important;
+}
+
+
+
+
+
+
+
+/* Mobile Christmas adjustments */
+@media (max-width: 768px) {
+    .hero::after {
+        font-size: 8rem;
+    }
+    
+    .christmas-sale {
+        font-size: 0.7rem !important;
+    }
 }

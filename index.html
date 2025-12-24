@@ -4,7 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Starfall - Minecraft Survival Server</title>
+    <meta name="description" content="Join Starfall - The ultimate Minecraft survival server with 24/7 uptime, custom ranks, and an active community. Play now at play.starfallsmp.online">
     <link rel="icon" href="logo.jpg" type="image/jpeg">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://starfallsmp.online/">
+    <meta property="og:title" content="Starfall - Minecraft Survival Server">
+    <meta property="og:description" content="Join Starfall - The ultimate Minecraft survival server with 24/7 uptime, custom ranks, and an active community.">
+    <meta property="og:image" content="https://starfallsmp.online/logo.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://starfallsmp.online/">
+    <meta property="twitter:title" content="Starfall - Minecraft Survival Server">
+    <meta property="twitter:description" content="Join Starfall - The ultimate Minecraft survival server with 24/7 uptime, custom ranks, and an active community.">
+    <meta property="twitter:image" content="https://starfallsmp.online/logo.jpg">
+    
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Starfall Minecraft Server",
+      "url": "https://starfallsmp.online",
+      "logo": "https://starfallsmp.online/logo.jpg",
+      "description": "Ultimate Minecraft survival server with 24/7 uptime and active community",
+      "sameAs": [
+        "https://discord.gg/XpXS7DxP92"
+      ]
+    }
+    </script>
+    
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,8 +78,8 @@
             <div class="hero-logo">
                 <img src="logo.jpg" alt="Starfall Logo">
             </div>
-            <h1 class="hero-title">Welcome to <span class="highlight">Starfall</span></h1>
-            <p class="hero-subtitle">An Epic Minecraft Survival Experience</p>
+            <h1 class="hero-title">Welcome to <span class="highlight">Starfall</span> ⭐</h1>
+            <p class="hero-subtitle">Epic Minecraft Survival Experience!</p>
             <p class="hero-description">Join our growing community in the ultimate survival adventure. Build, explore, and conquer!</p>
             <div class="hero-buttons">
                 <button class="btn btn-primary" id="copyIP" data-ip="play.starfallsmp.online">
@@ -102,12 +133,14 @@
                 </h3>
                 <div class="store-grid">
                     <div class="store-item" data-type="rank">
-                        <div class="item-badge">Popular</div>
+                        <div class="item-badge christmas-sale">🎄 Christmas Sale!</div>
                         <div class="item-icon">
                             <i class="fas fa-star"></i>
                         </div>
                         <h4 class="item-name">Vortex Rank</h4>
-                        <div class="item-price">₹99 / $1.11</div>
+                        <div class="item-price">₹69 <span class="old-price">₹99</span>
+                            <div class="usd-price">~$0.82 <span class="old-price">$1.18</span></div>
+                        </div>
                         <p class="item-description" style="text-align: left; font-size: 0.85rem; line-height: 1.8;">
                             <strong style="color: var(--success-color);">Perks:</strong><br>
                             • 5 Sethome<br>
@@ -129,12 +162,14 @@
                         </button>
                     </div>
                     <div class="store-item" data-type="rank">
-                        <div class="item-badge premium">Premium</div>
+                        <div class="item-badge christmas-sale">🎁 Christmas Sale!</div>
                         <div class="item-icon">
                             <i class="fas fa-gem"></i>
                         </div>
                         <h4 class="item-name">Radiant Rank</h4>
-                        <div class="item-price">₹199 / $2.23</div>
+                        <div class="item-price">₹159 <span class="old-price">₹199</span>
+                            <div class="usd-price">~$1.89 <span class="old-price">$2.37</span></div>
+                        </div>
                         <p class="item-description" style="text-align: left; font-size: 0.85rem; line-height: 1.8;">
                             <strong style="color: var(--success-color);">Perks:</strong><br>
                             • 7 Sethome<br>
@@ -156,12 +191,14 @@
                         </button>
                     </div>
                     <div class="store-item" data-type="rank">
-                        <div class="item-badge legendary">Best</div>
+                        <div class="item-badge christmas-sale">⭐ Christmas Sale!</div>
                         <div class="item-icon">
                             <i class="fas fa-trophy"></i>
                         </div>
                         <h4 class="item-name">Astral Rank</h4>
-                        <div class="item-price">₹299 / $3.35</div>
+                        <div class="item-price">₹249 <span class="old-price">₹299</span>
+                            <div class="usd-price">~$2.96 <span class="old-price">$3.56</span></div>
+                        </div>
                         <p class="item-description" style="text-align: left; font-size: 0.85rem; line-height: 1.8;">
                             <strong style="color: var(--success-color);">Perks:</strong><br>
                             • 10 Sethome<br>
@@ -182,6 +219,39 @@
                             <i class="fas fa-shopping-cart"></i> Purchase
                         </button>
                     </div>
+                    <div class="store-item" data-type="rank" style="grid-column: 2; max-width: 350px; width: 100%;">
+                        <div class="item-badge" style="background: linear-gradient(135deg, #1e90ff, #00bfff); animation: pulse 2s ease-in-out infinite;">❄️ Limited Time - Until Dec 31!</div>
+                        <div class="item-icon">
+                            <i class="fas fa-snowflake"></i>
+                        </div>
+                        <h4 class="item-name">Frostfall Rank</h4>
+                        <div class="item-price">₹449
+                            <div class="usd-price">~$5.00</div>
+                        </div>
+                        <p class="item-description" style="text-align: left; font-size: 0.85rem; line-height: 1.8;">
+                            <strong style="color: #00bfff;">⭐ Valid for Season 1</strong><br>
+                            <strong style="color: var(--success-color);">Perks:</strong><br>
+                            • 15 Sethome<br>
+                            • 15 Auction Listing<br>
+                            • 5 Legendary Keys<br>
+                            • Access to Frostfall Kit<br>
+                            <strong style="color: var(--success-color);">Commands:</strong><br>
+                            • /craft<br>
+                            • /anvil<br>
+                            • /disposal<br>
+                            • /grindstone<br>
+                            • /hat<br>
+                            • /smithingtable<br>
+                            • /stonecutter<br>
+                            • /loom<br>
+                            <strong style="color: var(--success-color);">Others:</strong><br>
+                            • 1M In-Game Money<br>
+                            • 1500 Stars
+                        </p>
+                        <button class="btn-purchase" data-item="Frostfall Rank">
+                            <i class="fas fa-shopping-cart"></i> Purchase
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -193,7 +263,7 @@
                 <div class="store-grid">
                     
                     <div class="store-item" data-type="key">
-                        <div class="item-badge">Popular</div>
+                        <div class="item-badge christmas-sale">🎅 Christmas Sale!</div>
                         <div class="item-icon">
                             <i class="fas fa-gift"></i>
                         </div>
@@ -202,14 +272,16 @@
                             • Piglin Brute Spawner<br>
                             • Level 7 Gear
                         </p>
-                        <div class="item-price">₹150 / $1.78</div>
+                        <div class="item-price">₹119 <span class="old-price">₹150</span>
+                            <div class="usd-price">~$1.42 <span class="old-price">$1.78</span></div>
+                        </div>
                         <button class="btn-purchase" data-item="Prime Crate Key">
                             <i class="fas fa-shopping-cart"></i> Purchase
                         </button>
                     </div>
 
                     <div class="store-item" data-type="key">
-                        <div class="item-badge legendary">Best</div>
+                        <div class="item-badge christmas-sale">🎄 Christmas Sale!</div>
                         <div class="item-icon">
                             <i class="fas fa-box"></i>
                         </div>
@@ -218,7 +290,9 @@
                             • Warden Spawner<br>
                             • Level 10 Gear
                         </p>
-                        <div class="item-price">₹249 / $2.77</div>
+                        <div class="item-price">₹209 <span class="old-price">₹249</span>
+                            <div class="usd-price">~$2.49 <span class="old-price">$2.96</span></div>
+                        </div>
                         <button class="btn-purchase" data-item="Starfall Crate Key">
                             <i class="fas fa-shopping-cart"></i> Purchase
                         </button>
@@ -359,6 +433,26 @@
             <p class="modal-subtext">Item you want to purchase: <strong id="modalItem"></strong></p>
             <a href="https://discord.gg/XpXS7DxP92" target="_blank" class="btn btn-primary modal-btn">
                 <i class="fab fa-discord"></i> Open Discord & Raise Ticket</a>
+            </a>
+        </div>
+    </div>
+
+    <!-- Christmas Sale Popup -->
+    <div class="modal" id="christmasPopup">
+        <div class="modal-content christmas-modal">
+            <button class="modal-close" id="christmasClose">&times;</button>
+            <div class="modal-icon christmas-icon">
+                🎄
+            </div>
+            <h3 class="modal-title">🎅 Christmas Sale is Live! 🎁</h3>
+            <p class="modal-text">Special holiday discounts on all ranks and crate keys!</p>
+            <div class="christmas-features">
+                <div class="sale-item">⭐ Up to 30% OFF on Ranks</div>
+                <div class="sale-item">🎁 Exclusive Crate Keys</div>
+                <div class="sale-item">❄️ Limited Time Only</div>
+            </div>
+            <a href="#store" class="btn btn-primary modal-btn" id="shopNowBtn">
+                <i class="fas fa-shopping-cart"></i> Grab The Deals Now!
             </a>
         </div>
     </div>
