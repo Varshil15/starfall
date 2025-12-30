@@ -1,4 +1,39 @@
 // ========================================
+// Offer Popup on Page Load
+// ========================================
+window.addEventListener('load', () => {
+    const offerModal = document.getElementById('offerModal');
+    const offerModalClose = document.getElementById('offerModalClose');
+    const offerModalBtn = document.getElementById('offerModalBtn');
+    
+    // Show modal after a short delay
+    setTimeout(() => {
+        offerModal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }, 500);
+    
+    // Close modal when clicking the X button
+    offerModalClose.addEventListener('click', () => {
+        offerModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    });
+    
+    // Close modal when clicking the Shop Now button
+    offerModalBtn.addEventListener('click', () => {
+        offerModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    });
+    
+    // Close modal when clicking outside of it
+    offerModal.addEventListener('click', (e) => {
+        if (e.target === offerModal) {
+            offerModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+});
+
+// ========================================
 // Theme Toggle Functionality
 // ========================================
 const themeToggle = document.getElementById('themeToggle');
@@ -258,36 +293,22 @@ fadeInElements.forEach(element => {
 });
 
 // ========================================
-// Optimized Parallax Effect for Hero Background
+// Parallax Effect for Hero Background
 // ========================================
-let ticking = false;
-let lastScrollY = 0;
-
 window.addEventListener('scroll', () => {
-    lastScrollY = window.pageYOffset;
-
-    if (!ticking) {
-        window.requestAnimationFrame(() => {
-            if (lastScrollY < window.innerHeight) {
-                const heroContent = document.querySelector('.hero-content');
-                const heroBg = document.querySelector('.hero-bg');
-                
-                if (heroContent) {
-                    heroContent.style.transform = `translate3d(0, ${lastScrollY * 0.3}px, 0)`;
-                    heroContent.style.opacity = Math.max(0, 1 - (lastScrollY / 600));
-                }
-                
-                if (heroBg) {
-                    heroBg.style.transform = `translate3d(0, ${lastScrollY * 0.15}px, 0)`;
-                }
-            }
-            
-            ticking = false;
-        });
-
-        ticking = true;
+    const scrolled = window.pageYOffset;
+    const heroContent = document.querySelector('.hero-content');
+    const heroBg = document.querySelector('.hero-bg');
+    
+    if (heroContent && scrolled < window.innerHeight) {
+        heroContent.style.transform = `translateY(${scrolled * 0.5}px)`;
+        heroContent.style.opacity = 1 - (scrolled / 500);
     }
-}, { passive: true });
+    
+    if (heroBg && scrolled < window.innerHeight) {
+        heroBg.style.transform = `translateY(${scrolled * 0.3}px)`;
+    }
+});
 
 // ========================================
 // Add Hover Sound Effects (Optional)
@@ -438,4 +459,3 @@ function preloadResources() {
 }
 
 preloadResources();
-// ========================================
