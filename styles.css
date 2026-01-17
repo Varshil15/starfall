@@ -1123,29 +1123,6 @@ button {
     width: 100%;
 }
 
-/* Offer Modal Specific Styles */
-.offer-modal-content {
-    max-width: 600px;
-    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-secondary) 100%);
-    border: 2px solid #ff6b6b;
-    box-shadow: 0 0 30px rgba(255, 107, 107, 0.4), var(--shadow-lg);
-}
-
-.offer-modal-header {
-    margin-bottom: 20px;
-}
-
-@keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: scale(1.1);
-        opacity: 0.8;
-    }
-}
-
 /* ========================================
    Scroll to Top Button
 ======================================== */

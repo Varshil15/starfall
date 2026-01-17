@@ -1,39 +1,4 @@
 // ========================================
-// Offer Popup on Page Load
-// ========================================
-window.addEventListener('load', () => {
-    const offerModal = document.getElementById('offerModal');
-    const offerModalClose = document.getElementById('offerModalClose');
-    const offerModalBtn = document.getElementById('offerModalBtn');
-    
-    // Show modal after a short delay
-    setTimeout(() => {
-        offerModal.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-    }, 500);
-    
-    // Close modal when clicking the X button
-    offerModalClose.addEventListener('click', () => {
-        offerModal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    });
-    
-    // Close modal when clicking the Shop Now button
-    offerModalBtn.addEventListener('click', () => {
-        offerModal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    });
-    
-    // Close modal when clicking outside of it
-    offerModal.addEventListener('click', (e) => {
-        if (e.target === offerModal) {
-            offerModal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-    });
-});
-
-// ========================================
 // Theme Toggle Functionality
 // ========================================
 const themeToggle = document.getElementById('themeToggle');
